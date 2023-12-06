@@ -54,11 +54,11 @@
                                     </div>
                                 </div>
                                 <!-- Login -->
-                                <div class="login">
+                                <div class="login" style="margin-top: 4px;">
                                     <a href="#"><i class="fa fa-user" aria-hidden="true"></i> <span>Login</span></a>
                                 </div>
                                 <!-- Cart -->
-                                <div class="cart">
+                                <div class="cart" style="margin-top: 4px;">
                                     <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Cart <span class="cart-quantity">(1)</span></span></a>
                                 </div>
                             </div>
@@ -76,7 +76,7 @@
                     <nav class="classy-navbar justify-content-between" id="alazeaNav">
 
                         <!-- Nav Brand -->
-                        <a href="index.html" class="nav-brand"><img src="assets/images/core-img/logo.png" alt=""></a>
+                        <a href="index.php" class="nav-brand"><img src="assets/images/logo.png" alt=""></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -160,7 +160,7 @@
             <!-- Single Hero Post -->
             <div class="single-hero-post bg-overlay">
                 <!-- Post Image -->
-                <div class="slide-img bg-img" style="background-image: url(assets/images/bg-img/1.jpg);"></div>
+                <div class="slide-img bg-img" style="background-image: url(assets/images/1.jpg);"></div>
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12">
@@ -181,7 +181,7 @@
             <!-- Single Hero Post -->
             <div class="single-hero-post bg-overlay">
                 <!-- Post Image -->
-                <div class="slide-img bg-img" style="background-image: url(assets/images/bg-img/2.jpg);"></div>
+                <div class="slide-img bg-img" style="background-image: url(assets/images/2.jpg);"></div>
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12">
