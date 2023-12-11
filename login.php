@@ -32,7 +32,7 @@ if (isset($_POST['inMail']) && isset($_POST['inPass'])) {
                 if ($row['email'] === $email && $row['password'] === $password) {
                     $_SESSION['email'] = $email;
 
-                    echo "<script>window.location.href ='index.html'</script>";
+                    echo "<script>window.location.href ='homepage.html'</script>";
                     //header('');
                     exit();
                 }

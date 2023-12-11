@@ -6,38 +6,45 @@
   <title>Sign</title>
 
   <link rel="stylesheet" href="css/signin.css">
+  <style>
+    .login{
+       width: auto;
+        color:white;
+        font-family: 'Montserrat', sans-serif;
+        border-radius: 20px;
+        background-color: green;
+        font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+    }
+  </style>
 </head>
 <body>
   
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
-		<form action="#">
+		<form action="signup.php" method="POST">
 			<h1>Create Account</h1>
-			<!-- <div class="social-container">
-				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-			</div>
-			<span>or use your email for registration</span> -->
-			<input type="text" placeholder="Name" />
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
-			<button>Sign Up</button>
+			
+			<input type="text" name="outName" placeholder="Name" />
+			<input type="email" name="outMail" placeholder="example@gmail.com" />
+			<input type="password" name="outPass" placeholder="Password" />
+            <input type="submit" name="signUp" value="Sign Up" class="login">
+			<!-- <button name="signup">Sign Up</button> -->
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
-		<form action="#">
+		<form action="login.php"  method="POST">
 			<h1>Sign in</h1>
-			<!-- <div class="social-container">
-				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-			</div> -->
-			<!-- <span>use your account</span> -->
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
+		
+			<input type="email" name="inMail" placeholder="example@gmail.com" />
+			<input type="password" name="inPass" placeholder="Password" />
 			<a href="#">Forgot your password?</a>
-			<button>Sign In</button>
+            <input type="submit" name="signIn" value="Sign In" class="login">
+			<!-- <button name="signIn">Sign In</button> -->
 		</form>
 	</div>
 	<div class="overlay-container">
@@ -56,14 +63,6 @@
 	</div>
 </div>
 
-<footer>
-	<p>
-		Created with <i class="fa fa-heart"></i> by
-		<a target="_blank" href="https://florin-pop.com">Florin Pop</a>
-		- Read how I created this and how you can join the challenge
-		<a target="_blank" href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>.
-	</p>
-</footer>
 
 <script src="js/signin.js"></script>
 </body>

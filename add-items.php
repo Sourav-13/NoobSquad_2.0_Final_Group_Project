@@ -114,7 +114,7 @@
                                 <li class="current-list-item"><a href="add-items.html">Add Items</a>
 
                                 </li>
-                                <li><a href="view-items.html">View Items</a></li>
+                                <li><a href="view-items.php">View Items</a></li>
                                 <li><a href="view-appointments.html">View Appointment</a>
                                 <li><a href="admin-panel.html">Admin Panel</a>
 
@@ -136,6 +136,17 @@
         </div>
     </div>
     <!-- end header -->
+
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row no-gutters slider-text align-items-end justify-content-center">
+            <div class="col-md-9 ftco-animate pb-5 text-center">
+             
+            </div>
+          </div>
+        </div>
+      </section>
 
 
     <section class="ftco-section">

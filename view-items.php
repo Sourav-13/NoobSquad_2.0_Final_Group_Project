@@ -9,7 +9,7 @@
             margin-left: 15%;
             display: flex;
             flex-wrap: wrap;
-            justify-content:baseline;
+            justify-content: baseline;
 
         }
 
@@ -21,7 +21,7 @@
             overflow: hidden;
             padding: 10px;
             margin: 10px 25Px;
-            
+
         }
 
         .box img {
@@ -97,17 +97,18 @@
 
                         <!-- menu start -->
                         <nav class="main-menu">
-                            <ul>
-                                <li><a href="#">Home</a>
+                        <ul>
+                                <li><a href="admin-homepage.html">Home</a>
 
                                 </li>
-                                <li><a href="manage-user.html">Manage User</a></li>
+                                <li><a href="manage-user.php">Manage User</a></li>
+
                                 </li>
                                 <li><a href="add-items.php">Add Items</a>
 
                                 </li>
-                                <li class="current-list-item"><a href="view-items.html">View Items</a></li>
-                                <li><a href="view-appointments.html">View Appointment</a>
+                                <li class="current-list-item"><a href="view-items.php">View Items</a></li>
+                                <li><a href="view-appointments.php">View Appointment</a>
                                 <li><a href="admin-panel.html">Admin Panel</a>
 
                                 </li>
@@ -128,6 +129,18 @@
         </div>
     </div>
     <!-- end header -->
+
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-end justify-content-center">
+                <div class="col-md-9 ftco-animate pb-5 text-center">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div class="item-container">
         <?php
         include 'connect.php';
@@ -146,10 +159,6 @@
         <?php }
         } ?>
     </div>
-
-
-
-
 
 
     <script src="js/sticker.js"></script>
