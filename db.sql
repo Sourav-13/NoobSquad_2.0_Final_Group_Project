@@ -24,7 +24,7 @@ CREATE TABLE appointment_t (
     name VARCHAR(255) NOT NULL,
     subject VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
-    
+    message VARCHAR(255) NOT NULL,
 
     CONSTRAINT appointment_t PRIMARY KEY (appointmentID)
 );
