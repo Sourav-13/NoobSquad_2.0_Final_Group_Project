@@ -169,7 +169,7 @@
                                                 <div class="form-group">
                                                     <label class="label" for="subject">Image</label><br>
                                                     <!-- <input type="file" name="image" id=""> -->
-                                                    <input type="file" id="real-file" hidden="hidden" name="image" />
+                                                    <input required data-error="Please enter item image" type="file" id="real-file" hidden="hidden" name="image" />
                                                     <button type="button" id="custom-button"><i class="fa fa-solid fa-upload"></i>  CHOOSE AN IMAGE </button>
                                                     <span id="custom-text">No file chosen, yet.</span>
                                                 </div>
@@ -179,7 +179,7 @@
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="label" for="subject">Name</label>
-                                                    <input type="text" class="form-control" name="name" id="subject" placeholder="">
+                                                    <input type="text" required data-error="Please enter item name"class="form-control" name="name" id="subject" placeholder="">
                                                 </div>
                                             </div>
                                             <hr>
@@ -188,7 +188,7 @@
                                                 <div class="form-group">
                                                     <label class="label" for="#">Description</label>
                                                     <!-- <input type="text" class="form-control" name="description" id="subject" placeholder=""> -->
-                                                    <textarea name="description" class="form-control" id="message" cols="30" rows="4" placeholder=""></textarea>
+                                                    <textarea name="description" required data-error="Please enter item description"class="form-control" id="message" cols="30" rows="4" placeholder=""></textarea>
                                                 </div>
                                             </div>
                                             <hr>

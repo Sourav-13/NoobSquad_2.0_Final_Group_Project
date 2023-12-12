@@ -29,9 +29,9 @@
 		<form action="signup.php" method="POST">
 			<h1>Create Account</h1>
 			
-			<input type="text" name="outName" placeholder="Name" />
-			<input type="email" name="outMail" placeholder="example@gmail.com" />
-			<input type="password" name="outPass" placeholder="Password" />
+			<input type="text" required data-error="Please enter your name" name="outName" placeholder="Name" />
+			<input type="email" required data-error="Please enter your Email" name="outMail" placeholder="Email: example@gmail.com" />
+			<input type="password" name="outPass" required data-error="Please enter your password" placeholder="Password" />
             <input type="submit" name="signUp" value="Sign Up" class="login">
 			<!-- <button name="signup">Sign Up</button> -->
 		</form>
@@ -40,8 +40,8 @@
 		<form action="login.php"  method="POST">
 			<h1>Sign in</h1>
 		
-			<input type="email" name="inMail" placeholder="example@gmail.com" />
-			<input type="password" name="inPass" placeholder="Password" />
+			<input type="email" name="inMail" required data-error="Please enter your Email" placeholder="Email: example@gmail.com" />
+			<input type="password" required data-error="Please enter your password" name="inPass" placeholder="Password" />
 			<a href="#">Forgot your password?</a>
             <input type="submit" name="signIn" value="Sign In" class="login">
 			<!-- <button name="signIn">Sign In</button> -->
