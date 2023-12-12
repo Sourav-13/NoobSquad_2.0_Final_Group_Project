@@ -15,6 +15,7 @@
             width: 500px !important;
             height: 1px;
         }
+
         .container-f {
             padding: 2% 5%;
             /* background: linear-gradient(130deg, #5899E2, #FFFFFF); */
@@ -46,13 +47,16 @@
             font-family: sans-serif;
             color: #aaa;
         }
-        .ftco-section{
+
+        .ftco-section {
             box-shadow: none !important;
         }
-        .container{
+
+        .container {
             box-shadow: none !important;
         }
-        .row{
+
+        .row {
             box-shadow: none !important;
         }
     </style>
@@ -164,65 +168,65 @@
     </section>
 
     <div class="container-f">
-    <section class="ftco-section">
-        <div class="container">
+        <section class="ftco-section">
+            <div class="container">
 
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="wrapper img ck" style="background-image: url(images/about.jpg); ">
-                        <div class="row">
-                            <div class="col-md-9 col-lg-7">
-                                <div class="contact-wrap w-100 p-md-5 p-4">
-                                    <h3 class="mb-4">Add Items</h3>
-                                    <div id="form-message-warning" class="mb-4"></div>
-                                    <div id="form-message-success" class="mb-4">
-                                        Don't forget to provide short description of the item!
-                                    </div>
-                                    <form method="POST" enctype="multipart/form-data" id="contactForm" name="contactForm" class="contactForm">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="label" for="subject">Image</label><br>
-                                                    <!-- <input type="file" name="image" id=""> -->
-                                                    <input required data-error="Please enter item image" type="file" id="real-file" hidden="hidden" name="image" />
-                                                    <button type="button" id="custom-button"><i class="fa fa-solid fa-upload"></i> CHOOSE AN IMAGE </button>
-                                                    <span id="custom-text">No file chosen, yet.</span>
-                                                </div>
-                                            </div>
-                                            <hr>
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="label" for="subject">Name</label>
-                                                    <input type="text" required data-error="Please enter item name" class="form-control" name="name" id="subject" placeholder="">
-                                                </div>
-                                            </div>
-                                            <hr>
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="label" for="#">Description</label>
-                                                    <!-- <input type="text" class="form-control" name="description" id="subject" placeholder=""> -->
-                                                    <textarea name="description" required data-error="Please enter item description" class="form-control" id="message" cols="30" rows="4" placeholder=""></textarea>
-                                                </div>
-                                            </div>
-                                            <hr>
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <input type="submit" name="submit" value="Add Item" class="btn btn-primary">
-                                                    <!-- <div class="submitting"></div> -->
-                                                </div>
-                                            </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="wrapper img ck" style="background-image: url(images/about.jpg); ">
+                            <div class="row">
+                                <div class="col-md-9 col-lg-7">
+                                    <div class="contact-wrap w-100 p-md-5 p-4">
+                                        <h3 class="mb-4">Add Items</h3>
+                                        <div id="form-message-warning" class="mb-4"></div>
+                                        <div id="form-message-success" class="mb-4">
+                                            Don't forget to provide short description of the item!
                                         </div>
-                                    </form>
+                                        <form method="POST" enctype="multipart/form-data" id="contactForm" name="contactForm" class="contactForm">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label class="label" for="subject">Image</label><br>
+                                                        <!-- <input type="file" name="image" id=""> -->
+                                                        <input required data-error="Please enter item image" type="file" id="real-file" hidden="hidden" name="image" />
+                                                        <button type="button" id="custom-button"><i class="fa fa-solid fa-upload"></i> CHOOSE AN IMAGE </button>
+                                                        <span id="custom-text">No file chosen, yet.</span>
+                                                    </div>
+                                                </div>
+                                                <hr>
+
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label class="label" for="subject">Name</label>
+                                                        <input type="text" required data-error="Please enter item name" class="form-control" name="name" id="subject" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <hr>
+
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label class="label" for="#">Description</label>
+                                                        <!-- <input type="text" class="form-control" name="description" id="subject" placeholder=""> -->
+                                                        <textarea name="description" required data-error="Please enter item description" class="form-control" id="message" cols="30" rows="4" placeholder=""></textarea>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <input type="submit" name="submit" value="Add Item" class="btn btn-primary">
+                                                        <!-- <div class="submitting"></div> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
     </div>
 
     <?php

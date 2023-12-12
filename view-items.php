@@ -16,7 +16,8 @@
             font-size: 28px !important;
             color: grey !important;
         }
-        .t{
+
+        .t {
             display: flex;
             height: 70px;
             justify-content: center;
@@ -37,7 +38,7 @@
 
         .box {
             width: 300px;
-            height: 430px;
+            height: 440px;
             text-align: center;
             box-shadow: 5px 5px 5px 5px gray;
             border-radius: 5%;
@@ -50,11 +51,10 @@
         }
 
         .scrl {
-            height: 100px !important;
+            height: 60px !important;
             overflow-y: scroll !important;
             margin-bottom: 50px;
         }
-
 
         .scrl::-webkit-scrollbar {
             display: none !important;
@@ -64,11 +64,11 @@
             width: 100%;
             height: 280px;
             border-radius: 5%;
-            margin-bottom: 5px ;
+            margin-bottom: 5px;
 
         }
     </style>
-     <title>Nurani Garden Centre</title>
+    <title>Nurani Garden Centre</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 

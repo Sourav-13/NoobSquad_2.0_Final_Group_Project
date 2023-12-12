@@ -30,10 +30,10 @@ CREATE TABLE appointment_t (
 
 INSERT INTO user_t(name, email, password) VALUES
 ('admin', 'admin@gmail.com', 'admin'),
-('Roshni', 'roshni@gmail.com', '1234'),
-('Sourav', 'sourav@gmail.com', '1234'),
-('Hasan', 'hasan@gmail.com', '1234'),
-('Asif', 'asif@gmail.com', '1234');
+('Roshni Parvin', 'roshni@gmail.com', '1234'),
+('Samiul Islam Sourav', 'sourav@gmail.com', '1234'),
+('Hasan Imam', 'hasan@gmail.com', '1234'),
+('S Asif Ahmed Joy', 'asif@gmail.com', '1234');
 
 INSERT INTO item_t(img_url, name, description) VALUES
 ('1.jpg', 'Mother In Law Tongue', 'It does not require much care. Will do best in very bright light, even some morning sun.'),
