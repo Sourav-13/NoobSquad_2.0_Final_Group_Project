@@ -130,7 +130,7 @@
 
                                 </li>
                                 <li><a href="view-items.php">View Items</a></li>
-                                <li><a href="view-appointments.php">View Appointment</a>
+                                <li><a href="view-appointments.php">View Appointments</a>
                                 <li><a href="admin-panel.html">Admin Panel</a></li>
                                 <li><a href="index.html">Sign Out <i class="fas fa-sign-out-alt"> </i></a></li>
                                 <li>

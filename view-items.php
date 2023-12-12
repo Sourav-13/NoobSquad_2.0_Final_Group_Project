@@ -4,10 +4,23 @@
 <head>
     <style>
         .container-f {
-            height: 100vh;
+            /* height: 100vh; */
             padding: 1% 1%;
+
             /* background: linear-gradient(130deg, #5899E2, #FFFFFF); */
             background: linear-gradient(135deg, rgb(121, 241, 164) 10%, rgb(14, 92, 173) 100%);
+        }
+
+        h3 {
+            text-decoration: underline;
+            font-size: 28px !important;
+            color: grey !important;
+        }
+        .t{
+            display: flex;
+            height: 70px;
+            justify-content: center;
+            align-items: center;
         }
 
         .item-container {
@@ -19,11 +32,12 @@
             flex-wrap: wrap;
             justify-content: baseline;
 
+
         }
 
         .box {
             width: 300px;
-            height: 410px;
+            height: 430px;
             text-align: center;
             box-shadow: 5px 5px 5px 5px gray;
             border-radius: 5%;
@@ -31,12 +45,14 @@
             padding: 10px;
             margin: 10px 25Px;
             background-color: #f5f5dc;
-
+            justify-content: center;
+            align-items: center;
         }
 
         .scrl {
             height: 100px !important;
             overflow-y: scroll !important;
+            margin-bottom: 50px;
         }
 
 
@@ -48,10 +64,11 @@
             width: 100%;
             height: 280px;
             border-radius: 5%;
+            margin-bottom: 5px ;
 
         }
     </style>
-    <title>LawnCare - Free Bootstrap 4 Template by Colorlib</title>
+     <title>Nurani Garden Centre</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -173,8 +190,10 @@
             if (mysqli_num_rows($res) > 0) {
                 while ($images = mysqli_fetch_assoc($res)) {  ?>
                     <div class="box">
+                        <div class="t">
+                            <h3><?= $images['name'] ?></h3>
+                        </div>
                         <img src="images/upload/<?= $images['img_url'] ?>">
-                        <h4><?= $images['name'] ?></h4>
                         <div class="scrl">
                             <p><?= $images['description'] ?></p>
                         </div>
