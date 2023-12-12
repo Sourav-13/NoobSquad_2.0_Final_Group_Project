@@ -45,7 +45,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/animate.css">
@@ -116,19 +116,19 @@
                                 </li>
                                 <li><a href="view-items.php">View Items</a></li>
                                 <li><a href="view-appointments.html">View Appointment</a>
-                                <li><a href="admin-panel.html">Admin Panel</a>
-
-                                </li>
+                                <li><a href="admin-panel.html">Admin Panel</a></li>
+                                <li><a href="index.html">Sign Out <i class="fas fa-sign-out-alt"> </i></a></li>
                                 <li>
                                     <div class="header-icons">
-                                        <a class="shopping-cart" href="cart.html"><i class="fa fa-shopping-cart"></i></a>
-                                        <a class="mobile-hide search-bar-icon" href="#"><i class="fa fa-search"></i></a>
+                                        <!-- <a class="shopping-cart" href="cart.html"><i
+                                                class="fa fa-shopping-cart"></i></a>
+                                        <a class="mobile-hide search-bar-icon" href="#"><i class="fa fa-search"></i></a> -->
                                     </div>
                                 </li>
                             </ul>
                         </nav>
-                        <a class="mobile-show search-bar-icon" href="#"><i class="fa fa-search"></i></a>
-                        <div class="mobile-menu"></div>
+                        <!-- <a class="mobile-show search-bar-icon" href="#"><i class="fa fa-search"></i></a>
+                        <div class="mobile-menu"></div> -->
                         <!-- menu end -->
                     </div>
                 </div>
@@ -140,13 +140,13 @@
     <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
-          <div class="row no-gutters slider-text align-items-end justify-content-center">
-            <div class="col-md-9 ftco-animate pb-5 text-center">
-             
+            <div class="row no-gutters slider-text align-items-end justify-content-center">
+                <div class="col-md-9 ftco-animate pb-5 text-center">
+
+                </div>
             </div>
-          </div>
         </div>
-      </section>
+    </section>
 
 
     <section class="ftco-section">
@@ -170,7 +170,7 @@
                                                     <label class="label" for="subject">Image</label><br>
                                                     <!-- <input type="file" name="image" id=""> -->
                                                     <input required data-error="Please enter item image" type="file" id="real-file" hidden="hidden" name="image" />
-                                                    <button type="button" id="custom-button"><i class="fa fa-solid fa-upload"></i>  CHOOSE AN IMAGE </button>
+                                                    <button type="button" id="custom-button"><i class="fa fa-solid fa-upload"></i> CHOOSE AN IMAGE </button>
                                                     <span id="custom-text">No file chosen, yet.</span>
                                                 </div>
                                             </div>
@@ -179,7 +179,7 @@
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="label" for="subject">Name</label>
-                                                    <input type="text" required data-error="Please enter item name"class="form-control" name="name" id="subject" placeholder="">
+                                                    <input type="text" required data-error="Please enter item name" class="form-control" name="name" id="subject" placeholder="">
                                                 </div>
                                             </div>
                                             <hr>
@@ -188,7 +188,7 @@
                                                 <div class="form-group">
                                                     <label class="label" for="#">Description</label>
                                                     <!-- <input type="text" class="form-control" name="description" id="subject" placeholder=""> -->
-                                                    <textarea name="description" required data-error="Please enter item description"class="form-control" id="message" cols="30" rows="4" placeholder=""></textarea>
+                                                    <textarea name="description" required data-error="Please enter item description" class="form-control" id="message" cols="30" rows="4" placeholder=""></textarea>
                                                 </div>
                                             </div>
                                             <hr>
@@ -210,155 +210,157 @@
     </section>
 
     <?php
-if (isset($_POST['submit']) && isset($_FILES['image'])) {
-    include "connect.php";
+    if (isset($_POST['submit']) && isset($_FILES['image'])) {
+        include "connect.php";
 
-    echo "<pre>";
-    print_r($_FILES['image']);
-    echo "</pre>";
+        echo "<pre>";
+        print_r($_FILES['image']);
+        echo "</pre>";
 
-    $img_name = $_FILES['image']['name'];
-    $img_size = $_FILES['image']['size'];
-    $tmp_name = $_FILES['image']['tmp_name'];
-    $error = $_FILES['image']['error'];
-    $name = $_POST['name'];
-    $description = $_POST['description'];
-    //echo $img_name, $img_size, $tmp_name, $error, $name, $description;
-    echo $img_name;
+        $img_name = $_FILES['image']['name'];
+        $img_size = $_FILES['image']['size'];
+        $tmp_name = $_FILES['image']['tmp_name'];
+        $error = $_FILES['image']['error'];
+        $name = $_POST['name'];
+        $description = $_POST['description'];
+        //echo $img_name, $img_size, $tmp_name, $error, $name, $description;
+        echo $img_name;
 
-    if ($error === 0) {
-        if ($img_size > 125000000) {
-            $em = "Sorry, your file is too large.";
-            header("Location: index.php?error=$em");
-        } else {
-            $img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
-            $img_ex_lc = strtolower($img_ex);
+        if ($error === 0) {
+            if ($img_size > 125000000) {
+                $em = "Sorry, your file is too large.";
+                header("Location: index.php?error=$em");
+            } else {
+                $img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
+                $img_ex_lc = strtolower($img_ex);
 
-            $allowed_exs = array("jpg", "jpeg", "png");
+                $allowed_exs = array("jpg", "jpeg", "png");
 
-            if (in_array($img_ex_lc, $allowed_exs)) {
-                $new_img_name = uniqid("IMG-", true) . '.' . $img_ex_lc;
-                $img_upload_path = 'images/upload/' . $new_img_name;
-                move_uploaded_file($tmp_name, $img_upload_path);
+                if (in_array($img_ex_lc, $allowed_exs)) {
+                    $new_img_name = uniqid("IMG-", true) . '.' . $img_ex_lc;
+                    $img_upload_path = 'images/upload/' . $new_img_name;
+                    move_uploaded_file($tmp_name, $img_upload_path);
 
-                // Insert into Database
-                $sql = "INSERT INTO item_t (img_url,name,description) 
+                    // Insert into Database
+                    $sql = "INSERT INTO item_t (img_url,name,description) 
                 VALUES('$new_img_name','$name','$description')";
 
-                mysqli_query($conn, $sql);
-                header("Location: add-items.php");
-                
-                //   header("Location: index.html");
+                    mysqli_query($conn, $sql);
+                    header("Location: add-items.php");
 
-            } else {
-                $em = "You can't upload files of this type";
-                //  header("Location: index.php?error=$em");
+                    //   header("Location: index.html");
+
+                } else {
+                    $em = "You can't upload files of this type";
+                    //  header("Location: index.php?error=$em");
+                }
             }
+        } else {
+            $em = "unknown error occurred!";
+            // header("Location: index.php?error=$em");
         }
     } else {
-        $em = "unknown error occurred!";
-        // header("Location: index.php?error=$em");
+        //  header("Location: index.php");
     }
-} else {
-    //  header("Location: index.php");
-}
 
-?>
+    ?>
 
 
-<section class="ftco-section ftco-no-pt ftco-no-pb bg-primary">
-      <div class="container">
-        <div class="row d-flex justify-content-center">
-        	<div class="col-lg-8 py-4">
-        		
-          </div>
+    <section class="ftco-section ftco-no-pt ftco-no-pb bg-primary">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-8 py-4">
+
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
     <Section class="ftco-footer">
-			<footer class="ftco-footer ftco-bg-dark ftco-section">
-				<div class="container">
-		
-				 
-		
-					<div class="row mb-5">
-						
-						<div class="col-md-6 col-lg">
-							<div class="ftco-footer-widget mb-4">
-								<div class="ftco-footer_logo" data-wow-delay="500ms">
-									<img class="second-img" src="images/Nurani-logo.png" alt="">
-								</div>
-									
-								<p>Nurani Garden Centre, where artistry meets nature to craft breathtaking landscapes tailored to elevate your outdoor & Indoor living experience.</p>
-								<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-									<li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-									<li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-									<li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-md-6 col-lg">
-							<div class="ftco-footer-widget mb-4 ml-md-5">
-								<div class="ftco-heading-2">
-									<h2>Services</h2>
-								</div>
-								<ul class="list-unstyled">
-									<li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Landscape Design</a></li>
-									<li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Planting & Garden Install</a></li>
-									<li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Irrigation & Drainage</a></li>
-									<li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Garden Maintenance</a></li>
-									
-									<li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Pest & Disease Control</a></li>
-									<li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Sustainable Landscaping</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-md-6 col-lg">
-							<div class="ftco-footer-widget mb-4">
-								<div class="ftco-heading-2">
-									<h2>Contact Info</h2>
-								</div>
-								<div class="block-23 mb-3">
-									<ul>
-										<li><span class="icon icon-map-marker"></span><span class="text">Dhaka-1216</span></li>
-										<li><a href="#"><span class="icon icon-phone"></span><span class="text">01911111111</span></a></li>
-										<li><a href="#"><span class="icon icon-envelope"></span><span class="text">nuranigarden@gmail.com</span></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-lg">
-							 <div class="ftco-footer-widget mb-4">
-								<div class="ftco-heading-2">
-									<h2>Business Hours</h2>
-								</div>
-								
-								<div class="opening-hours">
-									<h4>Opening Days:</h4>
-									<p class="pl-3">
-										<span>Monday – Friday : 9am to 20 pm</span>
-										<span>Saturday : 9am to 17 pm</span>
-									</p>
-									<h4>Vacations:</h4>
-									<p class="pl-3">
-										<span>All Sunday Days</span>
-										<span>All Official Holidays</span>
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 text-center">
-		
-							<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved @ Nurani Garden Centre</p>
-						</div>
-					</div>
-				</div>
-			</footer>
-			
-		</Section>
+        <footer class="ftco-footer ftco-bg-dark ftco-section">
+            <div class="container">
+
+
+
+                <div class="row mb-5">
+
+                    <div class="col-md-6 col-lg">
+                        <div class="ftco-footer-widget mb-4">
+                            <div class="ftco-footer_logo" data-wow-delay="500ms">
+                                <img class="second-img" src="images/Nurani-logo.png" alt="">
+                            </div>
+
+                            <p>Nurani Garden Centre, where artistry meets nature to craft breathtaking landscapes tailored to elevate your outdoor & Indoor living experience.</p>
+                            <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg">
+                        <div class="ftco-footer-widget mb-4 ml-md-5">
+                            <div class="ftco-heading-2">
+                                <h2>Services</h2>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Landscape Design</a></li>
+                                <li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Planting & Garden Install</a></li>
+                                <li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Irrigation & Drainage</a></li>
+                                <li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Garden Maintenance</a></li>
+
+                                <li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Pest & Disease Control</a></li>
+                                <li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Sustainable Landscaping</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg">
+                        <div class="ftco-footer-widget mb-4">
+                            <div class="ftco-heading-2">
+                                <h2>Contact Info</h2>
+                            </div>
+                            <div class="block-23 mb-3">
+                                <ul>
+                                    <li><span class="icon icon-map-marker"></span><span class="text">Dhaka-1216</span></li>
+                                    <li><a href="#"><span class="icon icon-phone"></span><span class="text">01911111111</span></a></li>
+                                    <li><a href="#"><span class="icon icon-envelope"></span><span class="text">nuranigarden@gmail.com</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg">
+                        <div class="ftco-footer-widget mb-4">
+                            <div class="ftco-heading-2">
+                                <h2>Business Hours</h2>
+                            </div>
+
+                            <div class="opening-hours">
+                                <h4>Opening Days:</h4>
+                                <p class="pl-3">
+                                    <span>Monday – Friday : 9am to 20 pm</span>
+                                    <span>Saturday : 9am to 17 pm</span>
+                                </p>
+                                <h4>Vacations:</h4>
+                                <p class="pl-3">
+                                    <span>All Sunday Days</span>
+                                    <span>All Official Holidays</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+
+                        <p>Copyright &copy;<script>
+                                document.write(new Date().getFullYear());
+                            </script> All rights reserved @ Nurani Garden Centre</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </Section>
 
 
     <script src="js/file-input.js"></script>

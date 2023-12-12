@@ -31,6 +31,7 @@ if (isset($_POST['inMail']) && isset($_POST['inPass'])) {
             if (mysqli_num_rows($result) === 1) {
                 if ($row['email'] === $email && $row['password'] === $password) {
                     $_SESSION['email'] = $email;
+                    $_SESSION['name'] = $row['name'];
 
                     echo "<script>window.location.href ='homepage.html'</script>";
                     //header('');

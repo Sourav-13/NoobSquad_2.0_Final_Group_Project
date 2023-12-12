@@ -11,7 +11,7 @@ if (isset($_POST['outMail']) && isset($_POST['outPass']) && isset($_POST['outNam
         $sql = "INSERT INTO user_t (email,password,name) 
                VALUES('$email','$password','$name')";
         mysqli_query($conn, $sql);
-        echo "<script>window.location.href ='signin.html'</script>";
+        echo "<script>window.location.href ='index.html'</script>";
 
     }
 }

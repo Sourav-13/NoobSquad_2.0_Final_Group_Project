@@ -71,19 +71,18 @@
                                 </li>
                                 <li><a href="view-items.php">View Items</a></li>
                                 <li class="current-list-item"><a href="view-appointments.php">View Appointment</a>
-                                <li><a href="admin-panel.html">Admin Panel</a>
-
-                                </li>
+                                <li><a href="admin-panel.html">Admin Panel</a></li>
+                                <li ><a href="index.html">Sign Out <i class="fas fa-sign-out-alt"> </i></a></li>
                                 <li>
                                     <div class="header-icons">
-                                        <a class="shopping-cart" href="cart.html"><i
+                                        <!-- <a class="shopping-cart" href="cart.html"><i
                                                 class="fa fa-shopping-cart"></i></a>
-                                        <a class="mobile-hide search-bar-icon" href="#"><i class="fa fa-search"></i></a>
+                                        <a class="mobile-hide search-bar-icon" href="#"><i class="fa fa-search"></i></a> -->
                                     </div>
                                 </li>
                             </ul>
                         </nav>
-                        <a class="mobile-show search-bar-icon" href="#"><i class="fa fa-search"></i></a>
+                        <!-- <a class="mobile-show search-bar-icon" href="#"><i class="fa fa-search"></i></a> -->
                         <div class="mobile-menu"></div>
                         <!-- menu end -->
                     </div>
