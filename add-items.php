@@ -25,7 +25,7 @@
 
         .ck {
             margin-top: 35px;
-            box-shadow: 10px 10px 10px 10px gray;
+            
         }
 
         #custom-button {
