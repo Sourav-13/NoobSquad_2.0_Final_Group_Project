@@ -15,6 +15,12 @@
             width: 500px !important;
             height: 1px;
         }
+        .container-f {
+            padding: 2% 5%;
+            /* background: linear-gradient(130deg, #5899E2, #FFFFFF); */
+            background: linear-gradient(135deg, rgb(121, 241, 164) 10%, rgb(14, 92, 173) 100%);
+        }
+
 
         .ck {
             margin-top: 35px;
@@ -39,6 +45,15 @@
             margin-left: 10px;
             font-family: sans-serif;
             color: #aaa;
+        }
+        .ftco-section{
+            box-shadow: none !important;
+        }
+        .container{
+            box-shadow: none !important;
+        }
+        .row{
+            box-shadow: none !important;
         }
     </style>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
@@ -107,7 +122,7 @@
                                 <li><a href="#">Home</a>
 
                                 </li>
-                                <li><a href="manage-user.html">Manage User</a></li>
+                                <li><a href="manage-user.php">Manage User</a></li>
 
 
                                 </li>
@@ -115,7 +130,7 @@
 
                                 </li>
                                 <li><a href="view-items.php">View Items</a></li>
-                                <li><a href="view-appointments.html">View Appointment</a>
+                                <li><a href="view-appointments.php">View Appointment</a>
                                 <li><a href="admin-panel.html">Admin Panel</a></li>
                                 <li><a href="index.html">Sign Out <i class="fas fa-sign-out-alt"> </i></a></li>
                                 <li>
@@ -148,7 +163,7 @@
         </div>
     </section>
 
-
+    <div class="container-f">
     <section class="ftco-section">
         <div class="container">
 
@@ -208,6 +223,7 @@
             </div>
         </div>
     </section>
+    </div>
 
     <?php
     if (isset($_POST['submit']) && isset($_FILES['image'])) {
@@ -266,15 +282,6 @@
     ?>
 
 
-    <section class="ftco-section ftco-no-pt ftco-no-pb bg-primary">
-        <div class="container">
-            <div class="row d-flex justify-content-center">
-                <div class="col-lg-8 py-4">
-
-                </div>
-            </div>
-        </div>
-    </section>
 
     <Section class="ftco-footer">
         <footer class="ftco-footer ftco-bg-dark ftco-section">

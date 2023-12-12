@@ -7,6 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
+    <style>
+        .container-f {
+            height: 100vh;
+            padding: 2% 5%;
+            /* background: linear-gradient(130deg, #5899E2, #FFFFFF); */
+            background: linear-gradient(135deg, rgb(121, 241, 164) 10%, rgb(14, 92, 173) 100%);
+
+        }
+
+        .title {
+            font-size: 25px;
+            font-weight: 500;
+            position: relative;
+            margin-bottom: 10px;
+
+        }
+
+        .title::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 3px;
+            width: 190px;
+            border-radius: 5px;
+            background: linear-gradient(135deg, #71b7e6, #9b59b6);
+        }
+    </style>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
@@ -59,7 +89,7 @@
 
                         <!-- menu start -->
                         <nav class="main-menu">
-                        <ul>
+                            <ul>
                                 <li><a href="admin-homepage.html">Home</a>
 
                                 </li>
@@ -70,9 +100,9 @@
 
                                 </li>
                                 <li><a href="view-items.php">View Items</a></li>
-                                <li class="current-list-item"><a href="view-appointments.php">View Appointment</a>
+                                <li class="current-list-item"><a href="view-appointments.php">View Appointments</a>
                                 <li><a href="admin-panel.html">Admin Panel</a></li>
-                                <li ><a href="index.html">Sign Out <i class="fas fa-sign-out-alt"> </i></a></li>
+                                <li><a href="index.html">Sign Out <i class="fas fa-sign-out-alt"> </i></a></li>
                                 <li>
                                     <div class="header-icons">
                                         <!-- <a class="shopping-cart" href="cart.html"><i
@@ -93,8 +123,7 @@
     <!-- end header -->
 
 
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');"
-        data-stellar-background-ratio="0.5">
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text align-items-end justify-content-center">
@@ -106,99 +135,137 @@
     </section>
 
 
-    <section class="ftco-section ftco-no-pt ftco-no-pb bg-primary">
-      <div class="container">
-        <div class="row d-flex justify-content-center">
-        	<div class="col-lg-8 py-4">
-        		
-          </div>
+    <div class="container-f">
+        <div class="title">All Appointments</div>
+        <table class="table text center table-info table-striped">
+            <thead class="">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Message</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                include "connect.php";
+                $viewMessage = "SELECT *
+                FROM appointment_t";
+                $result = mysqli_query($conn, $viewMessage);
+                while ($row = mysqli_fetch_assoc($result)) {
+                ?>
+                    <tr>
+                        <td><?php echo $row['name']; ?></td>
+                        <td><?php echo $row['subject']; ?></td>
+                        <td><?php echo $row['email']; ?></td>
+                        <td><?php echo $row['message']; ?></td>
+                    </tr>
+
+                <?php
+                }
+
+                ?>
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- <section class="ftco-section ftco-no-pt ftco-no-pb bg-primary">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-8 py-4">
+
+                </div>
+            </div>
         </div>
-      </div>
-    </section>
+    </section> -->
 
     <Section class="ftco-footer">
-			<footer class="ftco-footer ftco-bg-dark ftco-section">
-				<div class="container">
-		
-				 
-		
-					<div class="row mb-5">
-						
-						<div class="col-md-6 col-lg">
-							<div class="ftco-footer-widget mb-4">
-								<div class="ftco-footer_logo" data-wow-delay="500ms">
-									<img class="second-img" src="images/Nurani-logo.png" alt="">
-								</div>
-									
-								<p>Nurani Garden Centre, where artistry meets nature to craft breathtaking landscapes tailored to elevate your outdoor & Indoor living experience.</p>
-								<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-									<li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-									<li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-									<li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-md-6 col-lg">
-							<div class="ftco-footer-widget mb-4 ml-md-5">
-								<div class="ftco-heading-2">
-									<h2>Services</h2>
-								</div>
-								<ul class="list-unstyled">
-									<li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Landscape Design</a></li>
-									<li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Planting & Garden Install</a></li>
-									<li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Irrigation & Drainage</a></li>
-									<li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Garden Maintenance</a></li>
-									
-									<li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Pest & Disease Control</a></li>
-									<li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Sustainable Landscaping</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-md-6 col-lg">
-							<div class="ftco-footer-widget mb-4">
-								<div class="ftco-heading-2">
-									<h2>Contact Info</h2>
-								</div>
-								<div class="block-23 mb-3">
-									<ul>
-										<li><span class="icon icon-map-marker"></span><span class="text">Dhaka-1216</span></li>
-										<li><a href="#"><span class="icon icon-phone"></span><span class="text">01911111111</span></a></li>
-										<li><a href="#"><span class="icon icon-envelope"></span><span class="text">nuranigarden@gmail.com</span></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-lg">
-							 <div class="ftco-footer-widget mb-4">
-								<div class="ftco-heading-2">
-									<h2>Business Hours</h2>
-								</div>
-								
-								<div class="opening-hours">
-									<h4>Opening Days:</h4>
-									<p class="pl-3">
-										<span>Monday – Friday : 9am to 20 pm</span>
-										<span>Saturday : 9am to 17 pm</span>
-									</p>
-									<h4>Vacations:</h4>
-									<p class="pl-3">
-										<span>All Sunday Days</span>
-										<span>All Official Holidays</span>
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 text-center">
-		
-							<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved @ Nurani Garden Centre</p>
-						</div>
-					</div>
-				</div>
-			</footer>
-			
-		</Section>
+        <footer class="ftco-footer ftco-bg-dark ftco-section">
+            <div class="container">
+
+
+
+                <div class="row mb-5">
+
+                    <div class="col-md-6 col-lg">
+                        <div class="ftco-footer-widget mb-4">
+                            <div class="ftco-footer_logo" data-wow-delay="500ms">
+                                <img class="second-img" src="images/Nurani-logo.png" alt="">
+                            </div>
+
+                            <p>Nurani Garden Centre, where artistry meets nature to craft breathtaking landscapes tailored to elevate your outdoor & Indoor living experience.</p>
+                            <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg">
+                        <div class="ftco-footer-widget mb-4 ml-md-5">
+                            <div class="ftco-heading-2">
+                                <h2>Services</h2>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Landscape Design</a></li>
+                                <li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Planting & Garden Install</a></li>
+                                <li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Irrigation & Drainage</a></li>
+                                <li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Garden Maintenance</a></li>
+
+                                <li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Pest & Disease Control</a></li>
+                                <li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Sustainable Landscaping</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg">
+                        <div class="ftco-footer-widget mb-4">
+                            <div class="ftco-heading-2">
+                                <h2>Contact Info</h2>
+                            </div>
+                            <div class="block-23 mb-3">
+                                <ul>
+                                    <li><span class="icon icon-map-marker"></span><span class="text">Dhaka-1216</span></li>
+                                    <li><a href="#"><span class="icon icon-phone"></span><span class="text">01911111111</span></a></li>
+                                    <li><a href="#"><span class="icon icon-envelope"></span><span class="text">nuranigarden@gmail.com</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg">
+                        <div class="ftco-footer-widget mb-4">
+                            <div class="ftco-heading-2">
+                                <h2>Business Hours</h2>
+                            </div>
+
+                            <div class="opening-hours">
+                                <h4>Opening Days:</h4>
+                                <p class="pl-3">
+                                    <span>Monday – Friday : 9am to 20 pm</span>
+                                    <span>Saturday : 9am to 17 pm</span>
+                                </p>
+                                <h4>Vacations:</h4>
+                                <p class="pl-3">
+                                    <span>All Sunday Days</span>
+                                    <span>All Official Holidays</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+
+                        <p>Copyright &copy;<script>
+                                document.write(new Date().getFullYear());
+                            </script> All rights reserved @ Nurani Garden Centre</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </Section>
 
     <script src="js/sticker.js"></script>
     <script src="js/jquery.isotope-3.0.6.min.js"></script>
@@ -215,8 +282,7 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/scrollax.min.js"></script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="js/google-map.js"></script>
     <script src="js/main.js"></script>
 
@@ -229,18 +295,20 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
 
         gtag('config', 'UA-23581568-13');
 
-        jQuery(document).ready(function ($) {
+        jQuery(document).ready(function($) {
             $('.main-menu').meanmenu({
                 meanMenuContainer: '.mobile-menu',
                 meanScreenWidth: "992"
             });
         });
-
     </script>
 
 

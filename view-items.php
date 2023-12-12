@@ -3,6 +3,13 @@
 
 <head>
     <style>
+        .container-f {
+            height: 100vh;
+            padding: 1% 1%;
+            /* background: linear-gradient(130deg, #5899E2, #FFFFFF); */
+            background: linear-gradient(135deg, rgb(121, 241, 164) 10%, rgb(14, 92, 173) 100%);
+        }
+
         .item-container {
             margin-top: 40px;
             margin-right: 15%;
@@ -16,13 +23,25 @@
 
         .box {
             width: 300px;
+            height: 410px;
             text-align: center;
             box-shadow: 5px 5px 5px 5px gray;
             border-radius: 5%;
             overflow: hidden;
             padding: 10px;
             margin: 10px 25Px;
+            background-color: #f5f5dc;
 
+        }
+
+        .scrl {
+            height: 100px !important;
+            overflow-y: scroll !important;
+        }
+
+
+        .scrl::-webkit-scrollbar {
+            display: none !important;
         }
 
         .box img {
@@ -98,7 +117,7 @@
 
                         <!-- menu start -->
                         <nav class="main-menu">
-                        <ul>
+                            <ul>
                                 <li><a href="admin-homepage.html">Home</a>
 
                                 </li>
@@ -109,11 +128,11 @@
 
                                 </li>
                                 <li class="current-list-item"><a href="view-items.php">View Items</a></li>
-                                <li><a href="view-appointments.php">View Appointment</a>
+                                <li><a href="view-appointments.php">View Appointments</a>
                                 <li><a href="admin-panel.html">Admin Panel</a>
 
                                 </li>
-                                <li ><a href="index.html">Sign Out <i class="fas fa-sign-out-alt"> </i></a></li>
+                                <li><a href="index.html">Sign Out <i class="fas fa-sign-out-alt"> </i></a></li>
                                 <li>
                                     <div class="header-icons">
                                         <!-- <a class="shopping-cart" href="cart.html"><i
@@ -143,120 +162,114 @@
             </div>
         </div>
     </section>
+    <div class="container-f">
+        <div class="item-container">
+            <?php
+            include 'connect.php';
+            $sql = "SELECT * FROM item_t";;
+            $res = mysqli_query($conn, $sql); ?>
 
-    <div class="item-container">
-        <?php
-        include 'connect.php';
-        $sql = "SELECT * FROM item_t";;
-        $res = mysqli_query($conn, $sql); ?>
+            <?php
+            if (mysqli_num_rows($res) > 0) {
+                while ($images = mysqli_fetch_assoc($res)) {  ?>
+                    <div class="box">
+                        <img src="images/upload/<?= $images['img_url'] ?>">
+                        <h4><?= $images['name'] ?></h4>
+                        <div class="scrl">
+                            <p><?= $images['description'] ?></p>
+                        </div>
+                    </div>
 
-        <?php
-        if (mysqli_num_rows($res) > 0) {
-            while ($images = mysqli_fetch_assoc($res)) {  ?>
-                <div class="box">
-                    <img src="images/upload/<?= $images['img_url'] ?>">
-                    <h3><?= $images['name'] ?></h3>
-                    <p><?= $images['description'] ?></p>
-                </div>
-
-        <?php }
-        } ?>
+            <?php }
+            } ?>
+        </div>
     </div>
 
-
-    <section class="ftco-section ftco-no-pt ftco-no-pb bg-primary">
-      <div class="container">
-        <div class="row d-flex justify-content-center">
-        	<div class="col-lg-8 py-4">
-        		
-          </div>
-        </div>
-      </div>
-    </section>
-
     <Section class="ftco-footer">
-			<footer class="ftco-footer ftco-bg-dark ftco-section">
-				<div class="container">
-		
-				 
-		
-					<div class="row mb-5">
-						
-						<div class="col-md-6 col-lg">
-							<div class="ftco-footer-widget mb-4">
-								<div class="ftco-footer_logo" data-wow-delay="500ms">
-									<img class="second-img" src="images/Nurani-logo.png" alt="">
-								</div>
-									
-								<p>Nurani Garden Centre, where artistry meets nature to craft breathtaking landscapes tailored to elevate your outdoor & Indoor living experience.</p>
-								<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-									<li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-									<li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-									<li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-md-6 col-lg">
-							<div class="ftco-footer-widget mb-4 ml-md-5">
-								<div class="ftco-heading-2">
-									<h2>Services</h2>
-								</div>
-								<ul class="list-unstyled">
-									<li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Landscape Design</a></li>
-									<li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Planting & Garden Install</a></li>
-									<li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Irrigation & Drainage</a></li>
-									<li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Garden Maintenance</a></li>
-									
-									<li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Pest & Disease Control</a></li>
-									<li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Sustainable Landscaping</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-md-6 col-lg">
-							<div class="ftco-footer-widget mb-4">
-								<div class="ftco-heading-2">
-									<h2>Contact Info</h2>
-								</div>
-								<div class="block-23 mb-3">
-									<ul>
-										<li><span class="icon icon-map-marker"></span><span class="text">Dhaka-1216</span></li>
-										<li><a href="#"><span class="icon icon-phone"></span><span class="text">01911111111</span></a></li>
-										<li><a href="#"><span class="icon icon-envelope"></span><span class="text">nuranigarden@gmail.com</span></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-lg">
-							 <div class="ftco-footer-widget mb-4">
-								<div class="ftco-heading-2">
-									<h2>Business Hours</h2>
-								</div>
-								
-								<div class="opening-hours">
-									<h4>Opening Days:</h4>
-									<p class="pl-3">
-										<span>Monday – Friday : 9am to 20 pm</span>
-										<span>Saturday : 9am to 17 pm</span>
-									</p>
-									<h4>Vacations:</h4>
-									<p class="pl-3">
-										<span>All Sunday Days</span>
-										<span>All Official Holidays</span>
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 text-center">
-		
-							<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved @ Nurani Garden Centre</p>
-						</div>
-					</div>
-				</div>
-			</footer>
-			
-		</Section>
+        <footer class="ftco-footer ftco-bg-dark ftco-section">
+            <div class="container">
+
+
+
+                <div class="row mb-5">
+
+                    <div class="col-md-6 col-lg">
+                        <div class="ftco-footer-widget mb-4">
+                            <div class="ftco-footer_logo" data-wow-delay="500ms">
+                                <img class="second-img" src="images/Nurani-logo.png" alt="">
+                            </div>
+
+                            <p>Nurani Garden Centre, where artistry meets nature to craft breathtaking landscapes tailored to elevate your outdoor & Indoor living experience.</p>
+                            <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg">
+                        <div class="ftco-footer-widget mb-4 ml-md-5">
+                            <div class="ftco-heading-2">
+                                <h2>Services</h2>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Landscape Design</a></li>
+                                <li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Planting & Garden Install</a></li>
+                                <li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Irrigation & Drainage</a></li>
+                                <li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Garden Maintenance</a></li>
+
+                                <li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Pest & Disease Control</a></li>
+                                <li><a href="index.html#service" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Sustainable Landscaping</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg">
+                        <div class="ftco-footer-widget mb-4">
+                            <div class="ftco-heading-2">
+                                <h2>Contact Info</h2>
+                            </div>
+                            <div class="block-23 mb-3">
+                                <ul>
+                                    <li><span class="icon icon-map-marker"></span><span class="text">Dhaka-1216</span></li>
+                                    <li><a href="#"><span class="icon icon-phone"></span><span class="text">01911111111</span></a></li>
+                                    <li><a href="#"><span class="icon icon-envelope"></span><span class="text">nuranigarden@gmail.com</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg">
+                        <div class="ftco-footer-widget mb-4">
+                            <div class="ftco-heading-2">
+                                <h2>Business Hours</h2>
+                            </div>
+
+                            <div class="opening-hours">
+                                <h4>Opening Days:</h4>
+                                <p class="pl-3">
+                                    <span>Monday – Friday : 9am to 20 pm</span>
+                                    <span>Saturday : 9am to 17 pm</span>
+                                </p>
+                                <h4>Vacations:</h4>
+                                <p class="pl-3">
+                                    <span>All Sunday Days</span>
+                                    <span>All Official Holidays</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+
+                        <p>Copyright &copy;<script>
+                                document.write(new Date().getFullYear());
+                            </script> All rights reserved @ Nurani Garden Centre</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </Section>
 
     <script src="js/sticker.js"></script>
     <script src="js/jquery.isotope-3.0.6.min.js"></script>

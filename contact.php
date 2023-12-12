@@ -311,16 +311,6 @@ session_start();
 		</footer>
 
 	</Section>
-	<h1>
-	<?php
-	if (isset($_POST['submit'])) {
-		$name = $_SESSION['name'];
-		$email = $_SESSION['email'];
-		$message = $_POST['message'];
-		$subject = $_POST['subject'];
-
-echo $name, $email, $message, $subject;}
-	?></h1>
 
 	<?php
 	if (isset($_POST['submit'])) {
