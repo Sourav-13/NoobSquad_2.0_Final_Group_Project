@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>LawnCare - Free Bootstrap 4 Template by Colorlib</title>
+    <title>Nurani Garden Centre</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -25,7 +25,7 @@
 
         .ck {
             margin-top: 35px;
-            
+
         }
 
         #custom-button {
@@ -60,6 +60,8 @@
             box-shadow: none !important;
         }
     </style>
+    <link rel="icon" type="image/x-icon" href="/images/leaf.png">
+
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
